@@ -11,9 +11,12 @@
 | 1 | _Nom Prénom_ | Weather-Data-Service |
 | 2 | _Nom Prénom_ | Forecast-Service |
 | 3 | _Nom Prénom_ | Weather-Alert-Service |
-| 4 | _Nom Prénom_ | City & Favorites-Service |
-| 5 | _Nom Prénom_ | Climate-Analytics-Service |
-| Tous | Équipe | AI-Forecast-Service (Python, commun) |
+| 4 | _Nom Prénom_ | User-Preferences-Service |
+| 5 | _Nom Prénom_ | City & Favorites-Service |
+| 5 | _Nom Prénom_ | Trip-Planner-Service |
+
+| Tous | Équipe | Weather-Insights-Service  ( Django, commun) |
+| Tous | Équipe | Keycloak et Weather-Insights-Service  ( commun) |
 
 ---
 
