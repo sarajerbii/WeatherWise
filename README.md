@@ -10,12 +10,12 @@
 
 | Membre | Nom | Microservice |
 |---|---|---|
-| 1 | _Nom Prénom_ | Weather-Data-Service |
-| 2 | _Nom Prénom_ | Forecast-Service |
-| 3 | _Sara jerbi_ | Weather-Alert-Service |
-| 4 | _Nom Prénom_ | User-Preferences-Service |
-| 5 | _Nom Prénom_ | City & Favorites-Service |
-| 6 | _Nom Prénom_ | Trip-Planner-Service |
+| 1 | _Khawla Najai_ | Weather-Data-Service |
+| 2 | _Nadine Rahal_ | Forecast-Service |
+| 3 | _Sara Jerbi_ | Weather-Alert-Service |
+| 4 | _Ghassen Denguir_ | User-Preferences-Service |
+| 5 | _Aziz Sakouhi_ | City & Favorites-Service |
+| 6 | _Wissem_ | Trip-Planner-Service |
 | Tous | Équipe | Keycloak (configuration) + Weather-Insights-Service (Django) |
 
 ---
