@@ -2,8 +2,6 @@
 
 **Plateforme intelligente de suivi météorologique** — architecture microservices (Java / Spring Boot, Python / FastAPI, Angular).
 
-> Projet final AWD — Séance 4 : conception et organisation du dépôt (projet en cours de développement).
-
 ---
 
 ## 👥 Équipe
