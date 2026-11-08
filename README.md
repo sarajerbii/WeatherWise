@@ -13,9 +13,8 @@
 | 1 | _Nom Prénom_ | Weather-Data-Service |
 | 2 | _Nom Prénom_ | Forecast-Service |
 | 3 | _Nom Prénom_ | Weather-Alert-Service |
-| 4 | _Nom Prénom_ | Auth-Service |
-| 5 | _Nom Prénom_ | City & Favorites-Service |
-| 6 | _Nom Prénom_ | Climate-Analytics-Service |
+| 4 | _Nom Prénom_ | City & Favorites-Service |
+| 5 | _Nom Prénom_ | Climate-Analytics-Service |
 | Tous | Équipe | AI-Forecast-Service (Python, commun) |
 
 ---
