@@ -14,9 +14,7 @@
 | 4 | _Nom Prénom_ | User-Preferences-Service |
 | 5 | _Nom Prénom_ | City & Favorites-Service |
 | 5 | _Nom Prénom_ | Trip-Planner-Service |
-
 | Tous | Équipe | Weather-Insights-Service  ( Django, commun) |
-
 | Tous | Équipe | Keycloak et Weather-Insights-Service  ( commun) |
 
 ---
