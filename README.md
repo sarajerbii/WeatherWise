@@ -1,4 +1,4 @@
-# 🌦️ WeatherWise
+#  WeatherWise
 
 **Plateforme intelligente de suivi météorologique** — architecture microservices (Java / Spring Boot, Keycloak, Django, Angular).
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 👥 Équipe
+##  Équipe
 
 | Membre | Nom | Microservice |
 |---|---|---|
@@ -15,18 +15,18 @@
 | 3 | _Sara Jerbi_ | Weather-Alert-Service |
 | 4 | _Ghassen Denguir_ | User-Preferences-Service |
 | 5 | _Aziz Sakouhi_ | City & Favorites-Service |
-| 6 | _Wissem_ | Trip-Planner-Service |
+| 6 | _Wissem Rezgui_ | Trip-Planner-Service |
 | Tous | Équipe | Keycloak (configuration) + Weather-Insights-Service (Django) |
 
 ---
 
-## 💡 Idée et problématique
+##  Idée et problématique
 
 WeatherWise est une application web de suivi météo : météo actuelle, prévisions, villes favorites, préférences, alertes par e-mail, planification de voyages et recommandations. L'authentification est confiée à **Keycloak**, et un service commun **Django** calcule un indice de confort et produit des recommandations.
 
 **Problématique :** comment concevoir une plateforme météo modulaire, personnalisée, capable de détecter les risques et d'aider à planifier ses déplacements, tout en garantissant l'indépendance des services et la sécurité des accès ?
 
-## ✨ Fonctionnalités principales
+##  Fonctionnalités principales
 
 - Inscription, authentification et autorisations centralisées (Keycloak, rôles USER / ADMIN)
 - Météo actuelle et prévisions horaires / journalières
@@ -38,11 +38,11 @@ WeatherWise est une application web de suivi météo : météo actuelle, prévis
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 Le frontend Angular obtient un jeton JWT auprès de **Keycloak**, puis envoie ses requêtes à **Spring Cloud Gateway**, qui valide le jeton et route vers les services. Chaque microservice possède sa **propre base MySQL** ; les échanges se font en **REST/JSON**. Le Weather-Alert-Service envoie les e-mails directement via SMTP.
 
-📎 Diagrammes : [`Documentation/Diagrams/`](Documentation/Diagrams/)
+ Diagrammes : [`Documentation/Diagrams/`](Documentation/Diagrams/)
 
 ### Microservices
 
@@ -86,7 +86,7 @@ Java · Spring Boot · Spring Data JPA · Spring Security (resource server) · K
 
 ---
 
-## 📁 Structure du dépôt
+##  Structure du dépôt
 
 ```
 WeatherWise/
@@ -112,7 +112,7 @@ WeatherWise/
 
 ---
 
-## 🔀 Organisation Git et gestion de projet
+##  Organisation Git et gestion de projet
 
 - `main` : version stable
 - `develop` : intégration des fonctionnalités
@@ -126,7 +126,7 @@ Règles : issues pour les tâches importantes, endpoints et JSON définis avant 
 
 ---
 
-## 📅 Planning prévisionnel (4 semaines)
+##  Planning prévisionnel (4 semaines)
 
 | Période | Travaux prévus |
 |---|---|
@@ -137,7 +137,7 @@ Règles : issues pour les tâches importantes, endpoints et JSON définis avant 
 
 Parcours prioritaire : s'authentifier → consulter la météo → afficher les prévisions → configurer une alerte → recevoir un e-mail.
 
-## ⚠️ Risques principaux
+##  Risques principaux
 
 | Risque | Solution prévue |
 |---|---|
@@ -151,7 +151,7 @@ Parcours prioritaire : s'authentifier → consulter la météo → afficher les 
 
 ---
 
-## 🚀 Lancement
+##  Lancement
 
 _À compléter au fil du développement_ :
 
@@ -160,7 +160,7 @@ cd Backend
 docker compose up --build
 ```
 
-## 📄 Documentation
+##  Documentation
 
 - Présentation séance 4 : [`Documentation/Presentation/`](Documentation/Presentation/)
 - Diagrammes : [`Documentation/Diagrams/`](Documentation/Diagrams/)
