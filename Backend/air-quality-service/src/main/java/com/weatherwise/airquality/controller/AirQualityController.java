@@ -73,4 +73,11 @@ public class AirQualityController {
     public void delete(@PathVariable String id) {
         service.delete(id);
     }
+    // POST /api/air-quality/city/1/refresh?latitude=36.8065&longitude=10.1815
+    @PostMapping("/city/{cityId}/refresh")
+    public AirQualityObservation refresh(@PathVariable Long cityId,
+                                         @RequestParam double latitude,
+                                         @RequestParam double longitude) {
+        return service.refreshFromExternalApi(cityId, latitude, longitude);
+    }
 }
