@@ -4,9 +4,10 @@ Microservice WeatherWise de gestion des **préférences utilisateur** (Membre 4 
 
 | | |
 |---|---|
-| Techno | Java 17 · Spring Boot 4.1.2 · Spring Data JPA · MySQL 8 |
+| Techno | Java 17 · Spring Boot 3.5.x · Spring Cloud 2025.0.0 · Spring Data JPA · MySQL 8 |
 | Port | `8085` |
-| Base | `preferences_db` (créée automatiquement) |
+| Base | `preferences_db` (MySQL, créée automatiquement) |
+| Serveur MySQL | `localhost:3306` (serveur MySQL 8 partagé avec `location_db` du City & Favorites-Service) |
 | Route passerelle | `/api/preferences/**` |
 
 ## État d'avancement
@@ -18,12 +19,27 @@ L'identifiant de l'utilisateur est lu dans l'en-tête HTTP `X-User-Id` (temporai
 ## Lancer
 
 ```bash
+# Ordre de démarrage (atelier) : MySQL, puis le serveur Eureka (projet « eureka », port 8761), puis ce service
 # MySQL doit tourner sur localhost:3306
 export DB_USERNAME=root
 export DB_PASSWORD=...        # laisser vide si root n'a pas de mot de passe
+# Optionnel (valeurs par défaut) : DB_HOST=localhost  DB_PORT=3306  DB_NAME=preferences_db
 ./mvnw spring-boot:run        # (mvnw.cmd sous Windows)
 ./mvnw test                   # tests unitaires (sans MySQL)
 ```
+
+## Base de données
+
+Selon le rapport (§4.2 à §4.4), ce service utilise **MySQL 8** : base `preferences_db` sur le **serveur MySQL partagé, port 3306**
+(avec `location_db`). Les ports 33061 et 33062 sont réservés aux serveurs MySQL dédiés à Insights et Keycloak : ne pas les utiliser ici.
+
+## Eureka et Actuator (ateliers)
+
+- Enregistrement dans Eureka sous le nom `USER-PREFERENCES-SERVICE` : http://localhost:8761
+- `GET http://localhost:8085/actuator/health` (détail des composants : db, diskSpace, ping…)
+- `GET http://localhost:8085/actuator/info`
+- `GET http://localhost:8085/actuator/metrics`
+- Test de panne (atelier) : arrêter MySQL, rappeler `/actuator/health` (DOWN) et regarder le statut dans le dashboard Eureka, puis redémarrer MySQL.
 
 ## Contrat d'API
 
