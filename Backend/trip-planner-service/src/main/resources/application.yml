@@ -1,0 +1,39 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: trip-planner-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/planner_db}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8180/realms/weatherwise}
+
+weatherwise:
+  services:
+    weather-data-url: ${WEATHER_DATA_URL:http://localhost:8081}
+    insights-url: ${INSIGHTS_URL:http://localhost:8000}
+  # Seuils du niveau de risque (°C, km/h, %, mm)
+  risk:
+    heat-moderate: 35
+    heat-high: 38
+    cold-moderate: 0
+    wind-moderate: 50
+    wind-high: 70
+    rain-prob-moderate: 70
+    rain-amount-high: 20
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui/index.html

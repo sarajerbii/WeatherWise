@@ -1,0 +1,85 @@
+### Variables (remplacer le token par un jeton Keycloak valide)
+@host = http://localhost:8086
+@token = COLLER_LE_TOKEN_ICI
+
+### Créer un voyage
+POST {{host}}/api/trips
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Week-end à Tabarka",
+  "description": "Escapade en bord de mer",
+  "startDate": "2026-12-10",
+  "endDate": "2026-12-13",
+  "status": "PLANNED"
+}
+
+### Lister mes voyages
+GET {{host}}/api/trips
+Authorization: Bearer {{token}}
+
+### Détail d'un voyage (avec étapes)
+GET {{host}}/api/trips/1
+Authorization: Bearer {{token}}
+
+### Modifier un voyage
+PUT {{host}}/api/trips/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Week-end à Tabarka (modifié)",
+  "description": "Escapade en bord de mer",
+  "startDate": "2026-12-10",
+  "endDate": "2026-12-14",
+  "status": "PLANNED"
+}
+
+### Supprimer un voyage
+DELETE {{host}}/api/trips/1
+Authorization: Bearer {{token}}
+
+### Ajouter une étape
+POST {{host}}/api/trips/1/stops
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "cityName": "Tabarka",
+  "country": "Tunisie",
+  "arrivalDate": "2026-12-10",
+  "departureDate": "2026-12-12"
+}
+
+### Lister les étapes
+GET {{host}}/api/trips/1/stops
+Authorization: Bearer {{token}}
+
+### Détail d'une étape
+GET {{host}}/api/trips/1/stops/1
+Authorization: Bearer {{token}}
+
+### Modifier une étape
+PUT {{host}}/api/trips/1/stops/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "cityName": "Tabarka",
+  "country": "Tunisie",
+  "arrivalDate": "2026-12-10",
+  "departureDate": "2026-12-13"
+}
+
+### Supprimer une étape
+DELETE {{host}}/api/trips/1/stops/1
+Authorization: Bearer {{token}}
+
+### Résumé météo + niveau de risque par étape
+GET {{host}}/api/trips/1/weather
+Authorization: Bearer {{token}}
+
+### Recommandations par étape
+GET {{host}}/api/trips/1/recommendations
+Authorization: Bearer {{token}}

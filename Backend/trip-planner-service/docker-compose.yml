@@ -1,0 +1,36 @@
+# Lancement local du Trip-Planner-Service seul (PostgreSQL + service).
+# Dans le projet global, intégrer ces deux services au docker-compose.yml commun
+# (réseau weatherwise-net, Keycloak sur 8180, Weather-Data-Service sur 8081).
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    environment:
+      POSTGRES_DB: planner_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  trip-planner-service:
+    build: .
+    container_name: trip-planner-service
+    depends_on:
+      - postgres
+    ports:
+      - "8086:8086"
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/planner_db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      # doit correspondre EXACTEMENT au claim "iss" des jetons émis par Keycloak
+      KEYCLOAK_ISSUER_URI: http://host.docker.internal:8180/realms/weatherwise
+      WEATHER_DATA_URL: http://host.docker.internal:8081
+      INSIGHTS_URL: http://host.docker.internal:8000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  pg_data:
