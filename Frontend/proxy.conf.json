@@ -1,0 +1,12 @@
+{
+  "/api/cities": {
+    "target": "http://localhost:8084",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api/trips": {
+    "target": "http://localhost:8086",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
